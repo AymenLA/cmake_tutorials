@@ -10,6 +10,7 @@ int32_t main(int32_t argc, char* argv[]) {
     cout << "tutorial name : " << PRODUCT_NAME << endl;
     cout << "tutorial version : " << VERSION_MAJOR << "." << VERSION_MINOR << endl;
     cout << "tutorial production date : " << PRODUCTION_YEAR << "-" << PRODUCTION_WEEK << endl;
+    cout << "tutorial added definition through cmake = " << ADEF << endl;
 #endif
     Sum(5,8);
     SomeComponentInit();

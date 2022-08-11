@@ -33,6 +33,12 @@ configure_file(${CMAKE_SOURCE_DIR}/include/dconfiguration.h.ini include/dconfigu
 add_executable(mybinary ${SRC_FILES})
 target_include_directories(mybinary PUBLIC ${INCLUDE_DIRS} ${CMAKE_BINARY_DIR}/include)
 target_link_libraries(mybinary PUBLIC component_lib)
+target_compile_definitions(mybinary PUBLIC "ADEF=200")
+install(FILES "${PROJECT_BINARY_DIR}/mybinary"
+        DESTINATION "${PROJECT_BINARY_DIR}/executable")
+
+install(FILES "${CMAKE_SOURCE_DIR}/include/Sum.hpp" "${CMAKE_SOURCE_DIR}/lib/include/Component.hpp"
+        DESTINATION "${PROJECT_BINARY_DIR}/include")
 
 function(add_two_variables arg1 arg2)
     message(STATUS "running function add_two_variables with ${arg1} = ${${arg1}} - ${arg2} = ${${arg2}}")
